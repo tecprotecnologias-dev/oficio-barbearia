@@ -1,7 +1,8 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
-import { linkWhatsApp, servicos } from '@/lib/dados'
+import { servicos } from '@/lib/dados'
+import { abrirAvisoDemo } from './AvisoDemo'
 import { IconeWhatsApp } from './Icones'
 
 const horarios = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00']
@@ -21,18 +22,8 @@ export default function Agendamento() {
 
   const enviar = (e: FormEvent) => {
     e.preventDefault()
-    const dataBR = data.split('-').reverse().join('/')
-    const mensagem = [
-      'Olá! Gostaria de agendar um horário.',
-      `Nome: ${nome}`,
-      `Serviço: ${servico}`,
-      `Data: ${dataBR}`,
-      `Horário: ${horario}`,
-      obs && `Observação: ${obs}`,
-    ]
-      .filter(Boolean)
-      .join('\n')
-    window.open(linkWhatsApp(mensagem), '_blank', 'noopener,noreferrer')
+    // Na demonstração, o pedido não vai para o WhatsApp de exemplo
+    abrirAvisoDemo()
   }
 
   return (

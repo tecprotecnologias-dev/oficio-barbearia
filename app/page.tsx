@@ -11,6 +11,7 @@ import Agendamento from '@/components/Agendamento'
 import Contato from '@/components/Contato'
 import Footer from '@/components/Footer'
 import WhatsAppFlutuante from '@/components/WhatsAppFlutuante'
+import AvisoDemo from '@/components/AvisoDemo'
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppFlutuante />
+      <AvisoDemo />
     </>
   )
 }
